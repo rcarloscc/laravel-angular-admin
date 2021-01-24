@@ -54,8 +54,8 @@
     "webpack-stream": "^3.1.0"
   },
   "engines": {
-    "node": ">= 6.9.4",
-    "npm": ">= 4.4.0"
+    "node": "14.x",
+    "npm": "6.x"
   },
   "scripts": {
     "postinstall": "bower install && gulp --production"
