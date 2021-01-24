@@ -21,7 +21,7 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 $api->group(['middleware' => ['api']], function ($api) {
-    $api->controller('auth', 'Auth\AuthController');
+    $api->resource('auth', 'Auth\AuthController');
 
     // Password Reset Routes...
     $api->post('auth/password/email', 'Auth\PasswordResetController@sendResetLinkEmail');
@@ -35,5 +35,5 @@ $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
 });
 
 $api->group(['middleware' => ['api', 'api.auth', 'role:admin.super|admin.user']], function ($api) {
-    $api->controller('users', 'UserController');
+    $api->resource('users', 'UserController');
 });
